@@ -91,6 +91,7 @@ public class User {
 	}
 	public void showPlaylists() {
 		System.out.println("User: " + getName());
+		System.out.println("Number of Playlists: " + getUserPlaylists().size());
 		for (int i = 0; i < userPlaylists.size(); i++) {
 			System.out.println("Playlist " + (i+1) + ": " + userPlaylists.get(i).getPlaylistName());
 			System.out.println("\tNumber of songs: " + userPlaylists.get(i).getPlaylistSongs().size());

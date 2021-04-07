@@ -103,7 +103,6 @@ public class Playlist {
 			setCurrentSong(playlistSongs.get(1));
 			return getCurrentSong();
 		}
-		System.out.println("Tocando: " + getCurrentSong().getSongName() + " by " + getCurrentSong().getArtist());
 		return getCurrentSong();
 	}
 	
@@ -116,7 +115,6 @@ public class Playlist {
 				randomSong = playlistSongs.get(generator.nextInt(this.playlistSongs.size()));
 				setCurrentSong(randomSong);
 			}
-		System.out.println("Tocando aleatório: " + getCurrentSong().getSongName() + " by " + getCurrentSong().getArtist());
 		return getCurrentSong();
 	}
 	

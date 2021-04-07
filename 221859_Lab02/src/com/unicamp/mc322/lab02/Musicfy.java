@@ -42,8 +42,14 @@ public class Musicfy {
         user2.showInformation();
         
         Song asong1 = osuPlaylist.play();
+		System.out.println("Tocando: " + asong1.getSongName() + " by " + asong1.getArtist());
         Song asong2 = osuPlaylist.play();
         Song asong3 = osuPlaylist.play(true);
+		System.out.println("Tocando aleatório: " + asong3.getSongName() + " by " + asong3.getArtist());
+		
+		System.out.println("Artista com mais músicas na playlist " + popPlaylist.getPlaylistName() + " é "+ popPlaylist.getArtistWithMoreSongs());
+		System.out.println("Média de duração em segundos de playlist " + popPlaylist.getPlaylistName() + " é "+ popPlaylist.getAverageSongsDuration());
+		System.out.println("Música com menor duração na playlist " + popPlaylist.getPlaylistName() + " é "+ popPlaylist.getLowerDurationSong().getSongName() + " de " + popPlaylist.getLowerDurationSong().getArtist());
 	}
 
 }

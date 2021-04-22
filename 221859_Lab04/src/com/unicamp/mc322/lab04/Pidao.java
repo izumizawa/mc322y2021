@@ -67,9 +67,9 @@ public class Pidao {
 		for (int i = 0; i < this.menu.size(); i++) {
 			Lanche snack = this.menu.get(i);
 			if (snack.getDiscountPrice() == snack.getSnackPrice())
-				System.out.println("[" + snack.getSnackId() + "] " + snack.getSnackName() + " R$ " + snack.getSnackPrice());
+				System.out.println("[" + snack.getSnackId() + "] " + snack.getName() + " R$ " + snack.getSnackPrice());
 			else {
-				System.out.println("[" + snack.getSnackId() + "] " + snack.getSnackName() + " R$ " + snack.getDiscountPrice() + " (PROMOCAO! Preço normal: R$" + snack.getSnackPrice() + ")");				
+				System.out.println("[" + snack.getSnackId() + "] " + snack.getName() + " R$ " + snack.getDiscountPrice() + " (PROMOCAO! Preço normal: R$" + snack.getSnackPrice() + ")");				
 			}
 		}
 		System.out.println();
@@ -84,7 +84,7 @@ public class Pidao {
 				double discount = snack.getSnackPrice() * ((double)(100 - discountValue) / 100);
 				snack.setDiscountPrice(discount);
 				break;
-			case VALUE:
+			case FIXED_VALUE:
 				snack.setDiscountPrice(snack.getSnackPrice() - discountValue);
 				break;
 			default:
@@ -133,7 +133,7 @@ public class Pidao {
 		System.out.println("Existem " + getOrderList().size() + " pedidos:\n============================================");
 		for (int i = 0; i < getOrderList().size(); i++) {
 			Pedido order = getOrderList().get(i);
-			System.out.println("Usuário: " + order.getClient().getUserName() + " (" + order.getClient().getUserCpf() + ")");
+			System.out.println("Usuário: " + order.getClient().getName() + " (" + order.getClient().getCpf() + ")");
 			for (int j = 0; j < order.getOrderList().size(); j++) 
 				System.out.println("- " + order.getOrderList().get(j).getSnackId());
 			System.out.printf("Valor Total: R$ %.2f \n============================================\n", order.getOrderBill());

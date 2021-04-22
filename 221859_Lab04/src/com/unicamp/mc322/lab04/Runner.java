@@ -8,7 +8,7 @@ public class Runner {
 		Pidao pidaoApp = new Pidao("MARAMBAR", "123.456.789-10", 10, 2);
 		
 		User user1 = pidaoApp.registerUser("Marcos Paulo", "123.789.643-11", 1, 2);
-		User user2 = pidaoApp.registerUser("Pereira", "123.789.643-11", 8, 4);
+		User user2 = pidaoApp.registerUser("Pereira", "123.789.643-12", 8, 4);
 		
 		Lanche cuscuz = new Lanche("CCZ00", "Cuscuz com ovo", 10.00);	
 		Lanche macaxeira = new Lanche("MXCOS", "Macaxeira com costela no bafo", 15.00);
@@ -19,7 +19,7 @@ public class Runner {
 		pidaoApp.addToMenu(coxinhaFrango);
 		
 		pidaoApp.applyDiscount("CCZ00", 10, DiscountType.PERCENTAGE);
-		pidaoApp.applyDiscount("MXCOS", 10, DiscountType.VALUE);
+		pidaoApp.applyDiscount("MXCOS", 10, DiscountType.FIXED_VALUE);
 		pidaoApp.removeDiscount("MXCOS");
 		
 		Pedido p1 = new Pedido(user1);

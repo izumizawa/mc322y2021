@@ -9,7 +9,6 @@ public class Pedido {
 	private List<Lanche> orderList;
 	private Status orderStatus;
 	private double orderBill;
-	private double finalBill;
 	
 	public Pedido(User user) {
 		this.setClient(user);
@@ -53,7 +52,7 @@ public class Pedido {
 	}
 	
 	public void setOrderBill() {
-		finalBill = 0;
+		double finalBill = 0;
 		for (int i = 0; i < orderList.size(); i ++) {
 			if (orderList.get(i).getDiscountPrice() == orderList.get(i).getSnackPrice())
 				finalBill += orderList.get(i).getSnackPrice();

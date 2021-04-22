@@ -2,38 +2,38 @@ package com.unicamp.mc322.lab04;
 
 public class User {
 
-	private String userName;
-	private String userCpf;
-	private int[] userPosition;
+	private String name;
+	private String cpf;
+	private int[] position;
 	private int userTotalOrders;
 	
-	public User(String userName, String userCpf, int userX, int userY) {
-		this.setUserName(userName);
-		this.setUserCpf(userCpf);
-		this.userPosition = new int[2];
-		userPosition[0] = userX;
-		userPosition[1] = userY;
+	public User(String name, String cpf, int userX, int userY) {
+		this.setName(name);
+		this.setCpf(cpf);
+		this.position = new int[2];
+		position[0] = userX;
+		position[1] = userY;
 		this.setUserTotalOrders(0);
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUserCpf() {
-		return userCpf;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setUserCpf(String userCpf) {
-		this.userCpf = userCpf;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	
 	public int[] getPosition() {
-		return userPosition;
+		return position;
 	}
 
 	public int getUserTotalOrders() {

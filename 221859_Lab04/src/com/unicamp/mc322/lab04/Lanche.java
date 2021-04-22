@@ -3,13 +3,13 @@ package com.unicamp.mc322.lab04;
 public class Lanche {
 
 	private String snackId;
-	private String snackName;
+	private String name;
 	private double snackPrice;
 	private double discountPrice;
 	
-	public Lanche(String snackId, String snackName, double snackPrice) {
+	public Lanche(String snackId, String name, double snackPrice) {
 		this.snackId = snackId;
-		this.snackName = snackName;
+		this.name = name;
 		this.snackPrice = snackPrice;
 		this.discountPrice = snackPrice;
 	}
@@ -22,12 +22,12 @@ public class Lanche {
 		this.snackId = snackId;
 	}
 
-	public String getSnackName() {
-		return snackName;
+	public String getName() {
+		return name;
 	}
 
-	public void setSnackName(String snackName) {
-		this.snackName = snackName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public double getSnackPrice() {

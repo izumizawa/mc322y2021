@@ -11,7 +11,7 @@ public class MonthlyReminder extends Reminder {
 
 	@Override
 	public void printReminder() {
-		System.out.println(getDescription() + " - day " + getDay());
+		System.out.println(getDescription() + " - every month on day " + getDay());
 	}
 	
 	public int getDay() {

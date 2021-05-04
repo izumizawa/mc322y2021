@@ -89,6 +89,7 @@ public class User {
 		newOwner.addPlaylist(tranferedPlaylist);
 		this.userPlaylists.remove(tranferedPlaylist);
 	}
+	
 	public void showPlaylists() {
 		System.out.println("User: " + getName());
 		System.out.println("Number of Playlists: " + getUserPlaylists().size());

@@ -8,15 +8,18 @@ public abstract class Frog {
 	private String icon;
 	private Point current;
 	private Point previous;
-	private int satisfactionPoints;
+	private double satisfactionPoints;
 
-//	public Frog() {
-//		// TODO Auto-generated constructor stub
-//	}
+	public Frog(String icon, String name, Point current) {
+		setIcon(icon);
+		setName(name);
+		setCurrent(current);
+		setSatisfactionPoints(0);
+	}
 
-	public abstract void move(String direction);
+	public abstract Point move(String direction);
 	
-	public abstract void colectFood(Food food);
+	public abstract void collectFood(Food food);
 	
 	public String getName() {
 		return name;
@@ -50,11 +53,11 @@ public abstract class Frog {
 		this.previous = previous;
 	}
 
-	public int getSatisfactionPoints() {
+	public double getSatisfactionPoints() {
 		return satisfactionPoints;
 	}
 
-	public void setSatisfactionPoints(int satisfactionPoints) {
+	public void setSatisfactionPoints(double satisfactionPoints) {
 		this.satisfactionPoints = satisfactionPoints;
 	}
 	

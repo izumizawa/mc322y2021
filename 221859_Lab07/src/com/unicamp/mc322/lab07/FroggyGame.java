@@ -7,29 +7,26 @@ import java.util.Scanner;
 
 public class FroggyGame {
 
-	public static void runGame() {
+	public static void runGame(Map map) {
+		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		boolean running = true;
 		while (running) {
-		System.out.print("Enter the command: ");
-		String command = keyboard.nextLine();
-		if (command.compareTo("quit") == 0) {
-		running = false;
-		} else if (command.compareTo("w") == 0) {
-		// ...
-		} else if (command.compareTo("a") == 0) {
-		// ...
-		} else if (command.compareTo("s") == 0) {
-		// ...
-		} else if (command.compareTo("d") == 0) {
-		// ...
+			map.showBoard();
+			System.out.print("Enter the command: ");
+			String command = keyboard.nextLine();
+			if (command.compareTo("quit") == 0) {
+				running = false;
+			} else {
+				map.getFrog().move(command);
+				running = map.continueGame();
+			}
 		}
-		}
+		System.out.println("Game over!\nCongratulations, " + map.getFrog().getName() + "! You collected " + map.getFrog().getSatisfactionPoints() + " satisfaction points!");
 	}
 	
 	public static void main(String[] args) {
 		
-		// 1 Criar obstaculos
 		Stone stone1 = new Stone("<>", 2, 7);
 		Stone stone2 = new Stone("<>", 3, 2);
 		Stone stone3 = new Stone("<>", 7, 1);
@@ -55,7 +52,6 @@ public class FroggyGame {
 		obstacles.add(predator);
 		obstacles.add(trap);
 		
-		// 2 Criar comidas
 		Firefly firefly = new Firefly("va", 1, 3);
 		Cricket cricket = new Cricket("gr", 4, 7);
 		
@@ -64,12 +60,14 @@ public class FroggyGame {
 		rewards.add(cricket);
 		
 		// 3 Criar uma ra chamada ’Jogador 1’ começando na posição (8, 7) e com icone “J1”
+		Point froggyStart = new Point(8, 7);
+		Green froggy = new Green("J1", "Jogador 1", froggyStart);
+//		Tomato froggy = new Tomato("J1", "Jogador 1", froggyStart);
+		
+		
+		Map map = new Map(10, 10, "--", obstacles, rewards, froggy);
 
-		// 4 Criar um Mapa com largura 10 e altura 10 e com icone “--” para as posicoes livres
-
-		Map map = new Map(10, 10, "--", obstacles, rewards, null);
-		map.showBoard();
-//		runGame();
+		runGame(map);
 	}
 
 }

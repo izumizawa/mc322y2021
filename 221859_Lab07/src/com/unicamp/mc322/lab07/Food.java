@@ -7,7 +7,7 @@ public abstract class Food {
 	private String name;
 	private String icon;
 	private Point location;
-	private int satisfactionPoints;
+	private float satisfactionPoints;
 
 	public String getName() {
 		return name;
@@ -33,11 +33,11 @@ public abstract class Food {
 		this.location = location;
 	}
 
-	public int getSatisfactionPoints() {
+	public float getSatisfactionPoints() {
 		return satisfactionPoints;
 	}
 
-	public void setSatisfactionPoints(int satisfactionPoints) {
+	public void setSatisfactionPoints(float satisfactionPoints) {
 		this.satisfactionPoints = satisfactionPoints;
 	}
 

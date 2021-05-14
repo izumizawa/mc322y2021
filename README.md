@@ -19,3 +19,15 @@ A program that simulates a booking app for hotels. It books a reservation for an
 ## Lab 04: Delivery App
 
 Simulation of a food delivery app. It has users, meals and orders and it receives orders from user and it directs to restaurants.
+
+## Lab 05: Calendar
+
+Calendar app that saves reminders. Reminders can be weekly, monthly or with date scheduled.
+
+## Lab 06: Musicfy 2.0
+
+Continuation of Lab 02 with more OOP concepts.
+
+## Lab 07: Froggy Game
+
+Frog game. Player's objective is to collect food, avoid obstacles and the end of the board.

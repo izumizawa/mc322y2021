@@ -11,8 +11,8 @@ public class FroggyGame {
 		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
 		boolean running = true;
+		map.showBoard();
 		while (running) {
-			map.showBoard();
 			System.out.print("Enter the command: ");
 			String command = keyboard.nextLine();
 			if (command.compareTo("quit") == 0) {
@@ -21,8 +21,12 @@ public class FroggyGame {
 				map.getFrog().move(command);
 				running = map.continueGame();
 			}
+			map.showBoard();
 		}
-		System.out.println("Game over!\nCongratulations, " + map.getFrog().getName() + "! You collected " + map.getFrog().getSatisfactionPoints() + " satisfaction points!");
+		if (map.getFrog().getSatisfactionPoints() == 0)
+			System.out.println("Game over!\nBetter luck next time, " + map.getFrog().getName() + "! You collected " + map.getFrog().getSatisfactionPoints() + " satisfaction points.");
+		else
+			System.out.println("Game over!\nCongratulations, " + map.getFrog().getName() + "! You collected " + map.getFrog().getSatisfactionPoints() + " satisfaction points!");
 	}
 	
 	public static void main(String[] args) {
@@ -62,8 +66,8 @@ public class FroggyGame {
 		// 3 Criar uma ra chamada ’Jogador 1’ começando na posição (8, 7) e com icone “J1”
 		Point froggyStart = new Point(8, 7);
 //		Green froggy = new Green("J1", "Jogador 1", froggyStart);
-		Tomato froggy = new Tomato("J1", "Jogador 1", froggyStart);
-		
+//		Tomato froggy = new Tomato("J1", "Jogador 1", froggyStart);
+		Poisonous froggy = new Poisonous("J1", "Jogador 1", froggyStart);
 		
 		Map map = new Map(10, 10, "--", obstacles, rewards, froggy);
 

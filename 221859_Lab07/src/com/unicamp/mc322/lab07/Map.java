@@ -105,6 +105,7 @@ public class Map {
 		return continueGame;
 	}
 	
+	// Jogo acaba se a ra estiver em cima do obstaculo ou bater nas extremidades do tabuleiro
 	public boolean continueGame() {
 		boolean continueGame = true;
 		checkFood(getFrog().getCurrent());

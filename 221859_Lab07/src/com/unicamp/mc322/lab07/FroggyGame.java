@@ -61,8 +61,8 @@ public class FroggyGame {
 		
 		// 3 Criar uma ra chamada ’Jogador 1’ começando na posição (8, 7) e com icone “J1”
 		Point froggyStart = new Point(8, 7);
-		Green froggy = new Green("J1", "Jogador 1", froggyStart);
-//		Tomato froggy = new Tomato("J1", "Jogador 1", froggyStart);
+//		Green froggy = new Green("J1", "Jogador 1", froggyStart);
+		Tomato froggy = new Tomato("J1", "Jogador 1", froggyStart);
 		
 		
 		Map map = new Map(10, 10, "--", obstacles, rewards, froggy);

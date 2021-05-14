@@ -6,6 +6,7 @@ import java.util.List;
 public class Map {
 
 	private int height;
+
 	private int width;
 	private String[][] board;
 	private String freeSpace;
@@ -23,11 +24,30 @@ public class Map {
 		this.frog = frog;
 	}
 	
+	public int getHeight() {
+		return height;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+
+	public List<Obstacle> getObstacles() {
+		return obstacles;
+	}
+	
+	public List<Food> getRewards() {
+		return rewards;
+	}
+	
+	public Frog getFrog() {
+		return frog;
+	}
+
 	private void populateFreeSpaces() {
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-				if (board[i][j] == null)
-					board[i][j] = freeSpace;
+				board[i][j] = freeSpace;
 			}
 		}
 	}
@@ -54,7 +74,7 @@ public class Map {
 		populateFreeSpaces();
 		populateObstacles();
 		populateRewards();
-//		populateFrog();
+		populateFrog();
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				if (j == width - 1)
@@ -63,6 +83,34 @@ public class Map {
 					System.out.print(board[i][j] + "  ");
 			}
 		}
+	}
+	
+	public void checkFood(Point frogLocation) {
+		for (Food food : getRewards())
+			if (frogLocation.equals(food.getLocation()))
+				if (!food.getIcon().equals("  "))
+					getFrog().collectFood(food);
+	}
+	
+	public boolean checkObstacle(Point frogLocation) {
+		boolean continueGame = true;
+		for (Obstacle obstacle : getObstacles()) 
+			for (Point obstacleLocation : obstacle.getLocation()) 
+				if (frogLocation.equals(obstacleLocation)) 
+					continueGame = false;
+		
+		if (frogLocation.x < 0 || frogLocation.y < 0 || frogLocation.x >= getWidth() || frogLocation.y >= getHeight())
+			continueGame = false;
+		
+		return continueGame;
+	}
+	
+	public boolean continueGame() {
+		boolean continueGame = true;
+		checkFood(getFrog().getCurrent());
+		continueGame = checkObstacle(getFrog().getCurrent());
+
+		return continueGame;
 	}
 
 }

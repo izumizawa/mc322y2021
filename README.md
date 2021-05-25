@@ -31,3 +31,7 @@ Continuation of Lab 02 with more OOP concepts.
 ## Lab 07: Froggy Game
 
 Frog game. Player's objective is to collect food, avoid obstacles and the end of the board.
+
+## Lab 09: Data Structures 2.0
+
+List, Queue and PriorityQuere implemented. There are two PriorityQueue, one was build using composition and the other through inheritance.
